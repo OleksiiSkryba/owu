@@ -68,9 +68,9 @@
 // // let isInclude = str.includes('L');
 // //
 // // console.log(isInclude);
-// //
-// //
-// // ///// FUNCTIONS
+//
+//
+/// FUNCTIONS
 //
 //
 // function writer(a) {
