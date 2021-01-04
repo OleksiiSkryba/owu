@@ -3,8 +3,18 @@
     <div class="container">
         <div>
             <div class="row">
-                <div class="col-md-4">
-                    <BookCard />
+                <div class="col-md-4" v-for="(book, i) in books" :key="i">
+                    <book-card :book-data="book" >
+                     <template v-slot> <!--Accessing slot-->
+                            <button class="btn-primary">Read more</button>
+                        </template>
+                         <template v-slot:preview = "slotProps"> 
+                          <a :href = "slotProps.previewSlug">
+                              <button class="btn-secondary">Preview</button>
+                              </a>
+                          <!--Использование данных previewSlug путем доступа к реквизиту(props) слота-->
+                        </template>
+                        </book-card>
                 </div>
             </div>
         </div>

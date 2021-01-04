@@ -9,6 +9,7 @@
                 <p class="card-text">Description: {{bookData.description}}</p>
                 <slot></slot>
                 <slot name="button"></slot>
+                <slot name="preview" :previewSlug = "previewSlug"></slot><!-- Привязка свойства previewSlug к слоту -->
             </div>
         </div>
     </div>
@@ -22,6 +23,16 @@ export default {
             required: true,
             default: () => {}
         }
+    },
+        methods: {
+        computePreviewSlug(){
+            return this.bookData.title.split(' ').join('-') +'-'+ this.bookData.author.split(' ').join('-')
+        },
+    },
+    computed: {
+        previewSlug(){
+            return this.computePreviewSlug()
+        },
     }
 }
 </script>
