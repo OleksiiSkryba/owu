@@ -1,18 +1,18 @@
 <!--BookCard.vue-->
 <template>
-    <div>
-        <div class="card">
+        <div class="card h-100">
             <img :src="bookData.img_url" class="card-img-top">
             <div class="card-body">
-                <p class="card-text">Title: {{bookData.title}}</p>
-                <p class="card-text">Author: {{bookData.author}}</p>
+                 <p class="card-text card-header">Title: {{bookData.title}}</p>
+                 <p class="card-text">Author: {{bookData.author}}</p>
                 <p class="card-text">Description: {{bookData.description}}</p>
-                <slot></slot>
+                  </div>
+                  <div class="card-footer">
                 <slot name="button"></slot>
                 <slot name="preview" :previewSlug = "previewSlug"></slot><!-- Привязка свойства previewSlug к слоту -->
+                
             </div>
         </div>
-    </div>
 </template>
 
 <script>

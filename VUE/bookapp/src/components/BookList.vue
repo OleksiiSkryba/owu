@@ -1,11 +1,10 @@
 <!--BookList.vue-->
 <template>
     <div class="container">
-        <div>
-            <div class="row">
-                <div class="col-md-4" v-for="(book, i) in books" :key="i">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" ref="" v-for="(book, i) in books" :key="i">
                     <book-card :book-data="book" >
-                     <template v-slot> <!--Accessing slot-->
+                     <template v-slot:button> <!--Accessing slot-->
                             <button class="btn-primary">Read more</button>
                         </template>
                          <template v-slot:preview = "slotProps"> 
@@ -18,7 +17,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
